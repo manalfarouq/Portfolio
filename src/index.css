@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #FAF8F4;      /* Warm cream paper background */
+  --bg-card: #FFFFFF;      /* Crisp pure white for cards */
+  --border-card: #E2DDD5;  /* Soft warm border */
+  --text-main: #171717;    /* Deep black */
+  --text-sub: #4A4A45;     /* Refined warm neutral for descriptions (high contrast WCAG AA) */
+  --accent-forest: #0F5132;/* Deep forest green accent */
+  --accent-gold: #B08D57;  /* Discrete gold accent for highlight badges */
+  --tag-bg: #EFEBE4;       /* Warm neutral tag background */
+  --tag-text: #4A4A45;     /* Tag text color */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-retro {
+  font-family: 'VT323', monospace;
+}
+
+/* Swiss Minimalist Editorial Micro Labels and Rails */
+.micro-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4A4A45;
+  font-weight: 600;
+}
+
+.vertical-rail {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #6C6C66;
+}
+
+.accent-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #171717;
+  border-radius: 50%;
+}
+
+.editorial-card {
+  border-top: 1px solid #E2DDD5;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.editorial-card:hover {
+  border-color: #171717;
+}
+
+/* Custom marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D3CA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #171717;
+}
+
+/* Retro styling for ZoroXP */
+.xp-window {
+  border: 1px solid #171717;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: #FFFFFF;
+}
+
+.xp-titlebar {
+  background: #171717;
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: bold;
+  border-bottom: 1px solid #171717;
+}
+
+
