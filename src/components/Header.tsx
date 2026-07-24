@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="hidden xl:flex items-center gap-1 text-xs font-bold text-[#4A4A45] hover:text-[#171717] transition-colors uppercase tracking-wider ml-1"
           >
             GitHub
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#171717]" />
+            <ArrowUpRight className="w-4 h-4 text-[#171717]" />
           </a>
         </div>
       </div>
