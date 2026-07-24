@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   email: "farouqimanal@gmail.com",
   phone: "+212 682434065",
   linkedin: "https://linkedin.com/in/manal-farouqi",
-  github: "https://github.com/manalfarouqi",
+  github: "https://github.com/manalfarouq",
   tagline: "Fusionner la rigueur du Machine Learning avec une narration numérique audacieuse.",
   bio: "Diplômée d'une Licence d'Excellence en Analyse de Données et Intelligence Artificielle, je conçois des systèmes IA de bout en bout : du prétraitement des données à la modélisation complexe (Deep Learning, NLP, Computer Vision) jusqu'à leur conteneurisation et déploiement Cloud automatisé.",
   status: "Disponible pour Opportunités IA & Data (Industrie & R&D)",
