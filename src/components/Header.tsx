@@ -28,23 +28,11 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand / Logo */}
         <a href="#hero" className="group flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#171717] text-white flex items-center justify-center font-serif text-sm font-bold group-hover:scale-105 transition-all">
-            FM
-          </div>
-          <div>
-            <div className="font-serif text-lg tracking-tight font-bold text-[#171717] flex items-center gap-2">
-              FAROUQI MANAL
-              <span className="text-[10px] font-sans px-2 py-0.5 rounded bg-[#EFEBE4] text-[#171717] border border-[#E2DDD5] font-bold uppercase tracking-wider">
-                IA & DATA
-              </span>
-            </div>
-            <div className="flex items-center gap-2 mt-0.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#0F5132]"></div>
-              <p className="micro-label text-[9px] text-[#4A4A45]">
-                DÉVELOPPEUSE IA & DATA SCIENCE
-              </p>
-            </div>
-          </div>
+          <img
+            src="/manal.png"
+            alt="Farouqi Manal"
+            className="w-14 h-14 rounded-full object-cover object-top border border-[#E2DDD5] group-hover:scale-105 transition-all"
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -99,6 +87,3 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
-
-
-
