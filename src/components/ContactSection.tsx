@@ -188,8 +188,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenPrompt }) 
 
         {/* Footer Copy */}
         <div className="mt-16 pt-8 border-t border-[#E2DDD5] flex flex-col sm:flex-row items-center justify-between micro-label text-[#6C6C66] gap-4">
-          <span>© 2026 FAROUQI MANAL — Développeuse IA & Data Science. Tous droits réservés.</span>
-          <span>Design Swiss Minimalist Électronique & Éditorial.</span>
+          <span>© 2026 FAROUQI MANAL — Développeuse IA & Data Science. </span>
+          <span>{" ⁎˃ᴗ˂⁎"}</span>
         </div>
 
       </div>
