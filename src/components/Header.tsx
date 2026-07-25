@@ -17,10 +17,9 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const navItems = [
     { id: 'projects', label: '01. Projets' },
-    { id: 'notebooks', label: '02. Démos & Notebooks' },
-    { id: 'about', label: '03. Parcours' },
-    { id: 'studio', label: '04. Studio & Art' },
-    { id: 'contact', label: '05. Contact' },
+    { id: 'about', label: '02. Parcours' },
+    { id: 'studio', label: '03. Studio & Art' },
+    { id: 'contact', label: '04. Contact' },
   ];
 
   return (
@@ -80,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="hidden xl:flex items-center gap-1 text-xs font-bold text-[#4A4A45] hover:text-[#171717] transition-colors uppercase tracking-wider ml-1"
           >
             GitHub
-            <ArrowUpRight className="w-4 h-4 text-[#171717]" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#171717]" />
           </a>
         </div>
       </div>

@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { PROJECTS } from '../data';
-import { Terminal, Github, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
+import { Github, ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
 
-interface ProjectsSectionProps {
-  onSelectDemo: (demoKey: 'f1' | 'emotion' | 'hr' | 'zoroxp') => void;
-}
-
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }) => {
+export const ProjectsSection: React.FC = () => {
   const [expandedProjects, setExpandedProjects] = useState<Record<string, boolean>>({});
 
   const toggleExpand = (id: string) => {
@@ -20,7 +16,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
     <section id="projects" className="py-24 bg-[#FAF8F4] border-b border-[#E2DDD5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-2 micro-label text-[#171717]">
@@ -36,7 +31,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {PROJECTS.map((project, idx) => {
             const isExpanded = !!expandedProjects[project.id];
@@ -48,7 +42,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                 className="group bg-white rounded-xl border border-[#E2DDD5] p-8 shadow-xs hover:border-[#171717] transition-all flex flex-col justify-between"
               >
                 <div>
-                  {/* Category & Badge */}
                   <div className="flex items-center justify-between gap-4 mb-4">
                     <span className="micro-label text-[#6C6C66]">
                       PROJET 0{idx + 1} • {project.category}
@@ -64,7 +57,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                     </span>
                   </div>
 
-                  {/* Title & Subtitle */}
                   <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#171717]">
                     {project.title}
                   </h3>
@@ -72,12 +64,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                     {project.subtitle}
                   </p>
 
-                  {/* Concise 1-Sentence Description */}
                   <p className="text-sm text-[#4A4A45] font-medium leading-relaxed mt-4">
                     {project.description}
                   </p>
 
-                  {/* Accordion for Full Technical Details */}
                   <div className="mt-4">
                     <button
                       onClick={() => toggleExpand(project.id)}
@@ -100,10 +90,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                   </div>
                 </div>
 
-                {/* Bottom Section: Metrics & Actions */}
                 <div className="mt-6 pt-6 border-t border-[#E2DDD5] space-y-5">
                   
-                  {/* Metrics Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-3 px-3 rounded-lg bg-[#FAF8F4] border border-[#E2DDD5]">
                     {project.metrics.map((m, mIdx) => (
                       <div key={mIdx} className="text-left">
@@ -113,7 +101,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                     ))}
                   </div>
 
-                  {/* Tech Stack Pills (Warm Neutral) */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.techStack.map((tech) => (
                       <span
@@ -125,18 +112,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
                     ))}
                   </div>
 
-                  {/* Actions */}
-                  <div className="flex items-center justify-between pt-1">
-                    {project.demoKey && (
-                      <button
-                        onClick={() => onSelectDemo(project.demoKey!)}
-                        className="px-5 py-2.5 rounded-full bg-[#171717] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#333330] transition-all flex items-center gap-2 cursor-pointer shadow-xs"
-                      >
-                        <Terminal className="w-3.5 h-3.5" />
-                        <span>Notebook & Démo →</span>
-                      </button>
-                    )}
-
+                  <div className="flex items-center justify-end pt-1">
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -158,6 +134,3 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectDemo }
     </section>
   );
 };
-
-
-
