@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Download, ArrowUpRight } from 'lucide-react';
+import { Download, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 
 interface HeaderProps {
@@ -11,7 +11,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  onOpenPrompt,
   onOpenCv,
   activeSection,
 }) => {
@@ -64,15 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           {/* Prompt Detailed Brief Button */}
-          <button
-            onClick={onOpenPrompt}
-            className="px-3.5 py-2 rounded-full bg-white border border-[#171717] text-[#171717] text-xs font-bold hover:bg-[#171717] hover:text-white transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
-          >
-            <FileText className="w-3.5 h-3.5" />
-            <span className="text-[11px] uppercase tracking-wider hidden sm:inline">Brief / Prompt</span>
-          </button>
-
-          <a
+                    <a
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"

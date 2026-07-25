@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, FileText, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, ArrowUpRight } from 'lucide-react';
 
 interface ContactSectionProps {
   onOpenPrompt: () => void;
 }
 
-export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenPrompt }) => {
+export const ContactSection: React.FC<ContactSectionProps> = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -112,16 +112,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenPrompt }) 
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
-
-            {/* Brief Trigger */}
-            <button
-              onClick={onOpenPrompt}
-              className="w-full py-3.5 rounded-xl bg-white border border-[#171717] text-[#171717] text-xs font-bold uppercase tracking-widest hover:bg-[#171717] hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Consulter le Brief & Cahier des Charges PDF</span>
-            </button>
-          </div>
+</div>
 
           {/* Interactive Contact Form (7 cols) */}
           <div className="lg:col-span-7 bg-white p-8 rounded-xl border border-[#E2DDD5] shadow-xs">
