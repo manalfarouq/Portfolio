@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../data';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle2, ArrowUpRight, AlertCircle } from 'lucide-react';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdnkjbv';
 
 interface ContactSectionProps {
   onOpenPrompt: () => void;
@@ -8,16 +10,41 @@ interface ContactSectionProps {
 
 export const ContactSection: React.FC<ContactSectionProps> = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 4000);
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Send failed');
+      }
+
+      setFormSubmitted(true);
+      setTimeout(() => {
+        setFormSubmitted(false);
+        setFormData({ name: '', email: '', message: '' });
+      }, 4000);
+    } catch (err) {
+      setError("Une erreur est survenue. Merci de reessayer ou de me contacter directement par email.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -164,12 +191,20 @@ export const ContactSection: React.FC<ContactSectionProps> = () => {
                   ></textarea>
                 </div>
 
+                {error && (
+                  <div className="flex items-center gap-2 p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-[#171717] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#333330] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 rounded-xl bg-[#171717] text-white font-bold text-xs uppercase tracking-widest hover:bg-[#333330] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Transmettre le Message</span>
+                  <span>{isSubmitting ? 'Envoi en cours...' : 'Transmettre le Message'}</span>
                 </button>
               </form>
             )}
