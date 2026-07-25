@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       { label: "Données Entraînées", value: "26 Saisons" }
     ],
     category: "AI & ML",
-    githubUrl: "https://github.com/manalfarouqi",
+    githubUrl: "https://github.com/manalfarouq/f1-live-ai-commentator.git",
     demoKey: "f1",
     badge: "⭐ Projet Phare F1"
   },
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
       { label: "Dataset FER-2013", value: "35 000+ Visages" }
     ],
     category: "Vision",
-    githubUrl: "https://github.com/manalfarouqi",
+    githubUrl: "https://github.com/manalfarouq/Detection-d-Emotions-Faciales-.git",
     demoKey: "emotion",
     badge: "Computer Vision"
   },
@@ -77,7 +77,7 @@ export const PROJECTS: Project[] = [
       { label: "Compétences Clés", value: "15+ Entités" }
     ],
     category: "GenAI & NLP",
-    githubUrl: "https://github.com/manalfarouqi",
+    githubUrl: "https://github.com/manalfarouq/hr-pulse-ai.git",
     demoKey: "hr",
     badge: "Azure Cloud & MLOps"
   },
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
       { label: "Score AUC-ROC", value: "0,91" }
     ],
     category: "Full-Stack",
-    githubUrl: "https://github.com/manalfarouqi",
+    githubUrl: "https://github.com/manalfarouq/Sentiment-analysis-frontend.git",
     demoKey: "zoroxp",
     badge: "Design Rétro & NLP"
   }
