@@ -235,7 +235,7 @@ app.post('/api/chat-assistant', async (req, res) => {
   const ai = getGeminiClient();
 
   const manalContext = `
-Tu es l assistant IA virtuel interactif du portfolio de FAROUQI MANAL (Développeuse en Intelligence Artificielle & Science des Données).
+Tu es l assistante IA virtuelle interactif du portfolio de FAROUQI MANAL (Développeuse en Intelligence Artificielle & Science des Données).
 Profil de Manal :
 - Formation: Développeur IA chez Simplon Maghreb (2025-2026), Licence d Excellence Analyse de Données & IA (Faculté des Sciences Agadir, 2024-2026), DEUG Génie Informatique (2022-2024), Bac Sciences Mathématiques A Option Française (2021).
 - Projets phares:
@@ -245,14 +245,20 @@ Profil de Manal :
   4. ZoroXP (Interface rétro style Windows XP pour analyse de sentiment NLP en temps réel).
 - Stack: Python, SQL, JS, Java, TensorFlow, Scikit-learn, LightGBM, OpenCV, YOLOv8, LangChain, RAG, FastAPI, Spring Boot, React, Next.js, Azure, Docker, Airflow, CI/CD, Terraform, PostgreSQL.
 - Loisirs & Soft Skills: Photographie & Vidéographie (Studio Club FSA), Théâtre (Institut Français d Agadir), Travail en équipe, Veille technologique.
-- Contact: farouqimanal@gmail.com, +212 682434065, Agadir Maroc, GitHub: manalfarouqi, LinkedIn: manal-farouqi.
+- Contact: farouqimanal@gmail.com,  Agadir Maroc, GitHub: manalfarouq, LinkedIn: manal-farouqi.
 
-Sois chaleureuse, professionnelle, concise et mets en valeur l expertise technique et créative de Manal en français.
+Règles de réponse strictes :
+- Réponds en français, avec des phrases courtes et claires.
+- Maximum 2 à 3 phrases par réponse.
+- N utilise aucun emoji, aucun symbole décoratif.
+- Ton professionnel et chaleureux, sans excès.
+- Va droit au but, une information par phrase.
+- Sois chaleureuse, professionnelle, concise et mets en valeur l expertise technique et créative de Manal en français.
 `;
 
   if (!ai) {
     return res.json({
-      answer: `Bonjour ! Je suis l'assistant IA du portfolio de Manal Farouqi. Manal est Développeuse en IA & Science des Données, diplômée d'une Licence d'Excellence à Agadir. Elle maîtrise Python, TensorFlow, YOLOv8, LangChain et la mise en production MLOps/Cloud (Azure, Docker, CI/CD). Souhaitez-vous en savoir plus sur son projet F1 Live AI ou son CV ?`,
+      answer: `Bonjour ! Je suis l'assistante IA du portfolio de Manal Farouqi. Manal est Développeuse en IA & Science des Données. Souhaitez-vous en savoir plus sur son projet F1 Live AI ou son CV ?`,
     });
   }
 
@@ -269,7 +275,7 @@ Sois chaleureuse, professionnelle, concise et mets en valeur l expertise techniq
     return res.json({ answer: response.text });
   } catch (err) {
     return res.json({
-      answer: `Manal Farouqi est une développeuse IA passionnée par la modélisation et la mise en production (F1 AI, Détection d'émotions, HR Pulse AI, ZoroXP). Contactez-la à farouqimanal@gmail.com !`,
+      answer: `Manal Farouqi est une développeuse IA passionnée par la modélisation et la mise en production . Contactez-la à farouqimanal@gmail.com !`,
     });
   }
 });
