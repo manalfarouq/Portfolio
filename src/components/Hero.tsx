@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownRight, Terminal, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDownRight, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data';
 
 interface HeroProps {
@@ -46,16 +46,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPrompt }) => {
             </a>
 
             <a
-              href="#notebooks"
-              className="px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-[#0F5132] text-white hover:bg-[#0B3D26] transition-all flex items-center gap-2 shadow-xs"
-            >
-              <Terminal className="w-4 h-4" />
-              <span>Démos & Notebooks</span>
-            </a>
-
-            <a
               href="#contact"
-              className="px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest border border-[#171717] text-[#171717] bg-white hover:bg-[#171717] hover:text-white transition-all flex items-center gap-2 shadow-xs"
+              className="px-6 py-4 rounded-full font-bold text-xs uppercase tracking-widest bg-[#0F5132] text-white hover:bg-[#0B3D26] transition-all flex items-center gap-2 shadow-xs"
             >
               <Mail className="w-4 h-4" />
               <span>Contact Direct</span>
